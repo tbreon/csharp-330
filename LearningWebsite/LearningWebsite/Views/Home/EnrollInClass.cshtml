@@ -14,9 +14,9 @@
     @using (Html.BeginForm())
     {
         @Html.DropDownList(
-             "Foo",
+             "SelectedClass",
              new SelectList(
-                 Model.Select(x => new { Value = x.ClassId, Text = x.ClassName }),
+                 Model.Select(x => new { Value = x.ClassId.ToString(), Text = x.ClassName }),
                  "Value",
                  "Text"
              )

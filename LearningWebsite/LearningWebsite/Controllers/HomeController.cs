@@ -155,14 +155,15 @@ namespace LearningWebsite.Controllers
             if (ModelState.IsValid)
             {
                 var user = (LearningWebsite.Models.Login)Session["User"];
+                string optionsValue = Request.Form["SelectedClass"];
                 using (var databaseContext = new Models.Entities())
 
                 {
                     var stud = new EnrollInClass()
                     {
                         UserId = user.UserId,
-                        ClassId = 1
-                    };
+                        ClassId = Int32.Parse(optionsValue)
+                };
 
                     databaseContext.UpdateUserClass(stud.UserId, stud.ClassId);
                  
@@ -178,6 +179,13 @@ namespace LearningWebsite.Controllers
 
                 return View("EnrollInClass", enrollInClass);
             }
+        }
+
+        public ActionResult StudentClasses()
+        {
+            ViewBag.Message = "Student Classes";
+
+            return View();
         }
     }
 }
