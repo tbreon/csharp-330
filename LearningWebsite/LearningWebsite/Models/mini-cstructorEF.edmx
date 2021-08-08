@@ -55,9 +55,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="UpdateUserClass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="RetrieveClassesForStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UpdateUserClass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ClassId" Type="int" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="MiniCstructorModelStoreContainer">
           <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
@@ -108,10 +111,18 @@
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
           <FunctionImport Name="UpdateUserClass">
-            <Parameter Name="UserId" Mode="In" Type="Int32" />
             <Parameter Name="ClassId" Mode="In" Type="Int32" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RetrieveClassesForStudent" ReturnType="Collection(MiniCstructorModel.RetrieveClassesForStudent_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="RetrieveClassesForStudent_Result">
+          <Property Type="String" Name="ClassName" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="ClassPrice" Nullable="false" Precision="10" />
+          <Property Type="String" Name="ClassDescription" Nullable="false" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -147,6 +158,15 @@
             </EndProperty>
           </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="UpdateUserClass" FunctionName="MiniCstructorModel.Store.UpdateUserClass" />
+          <FunctionImportMapping FunctionImportName="RetrieveClassesForStudent" FunctionName="MiniCstructorModel.Store.RetrieveClassesForStudent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MiniCstructorModel.RetrieveClassesForStudent_Result">
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+                <ScalarProperty Name="ClassPrice" ColumnName="ClassPrice" />
+                <ScalarProperty Name="ClassDescription" ColumnName="ClassDescription" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

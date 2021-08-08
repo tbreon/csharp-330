@@ -50,9 +50,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="UpdateUserClass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+  <Function Name="RetrieveClassesForStudent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UpdateUserClass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ClassId" Type="int" Mode="In" />
+    <Parameter Name="UserId" Type="int" Mode="In" />
   </Function>
   <EntityContainer Name="MiniCstructorModelStoreContainer">
     <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />

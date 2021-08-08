@@ -30,5 +30,14 @@
       </EndProperty>
     </AssociationSetMapping>
     <FunctionImportMapping FunctionImportName="UpdateUserClass" FunctionName="MiniCstructorModel.Store.UpdateUserClass" />
+    <FunctionImportMapping FunctionImportName="RetrieveClassesForStudent" FunctionName="MiniCstructorModel.Store.RetrieveClassesForStudent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MiniCstructorModel.RetrieveClassesForStudent_Result">
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="ClassPrice" ColumnName="ClassPrice" />
+          <ScalarProperty Name="ClassDescription" ColumnName="ClassDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

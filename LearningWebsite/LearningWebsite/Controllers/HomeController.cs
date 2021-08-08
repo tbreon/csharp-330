@@ -185,7 +185,16 @@ namespace LearningWebsite.Controllers
         {
             ViewBag.Message = "Student Classes";
 
-            return View();
+            var user = (LearningWebsite.Models.Login)Session["User"];
+
+
+            using (var databaseContext = new Models.Entities())
+
+            {
+
+                var courses = databaseContext.RetrieveClassesForStudent(user.UserId);
+                return View(courses.ToList());
+            }
         }
     }
 }

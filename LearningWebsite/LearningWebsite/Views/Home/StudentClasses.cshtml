@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LearningWebsite.Models.User>
+﻿@model List<LearningWebsite.Models.RetrieveClassesForStudent_Result>
 
 @{
     ViewBag.Title = "Student Classes";
@@ -9,33 +9,27 @@
     <h1>@ViewData["Title"]</h1>
 </div>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ClassName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ClassDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ClassPrice)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClassName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClassDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClassPrice)
-            </td>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassPrice)
+                </td>
+            </tr>
+        }
+
+
+    </table>

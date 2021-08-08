@@ -152,6 +152,9 @@
       <DependentUpon>mini-cstructorEF.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Register.cs" />
+    <Compile Include="Models\RetrieveClassesForStudent_Result.cs">
+      <DependentUpon>mini-cstructorEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs">
       <DependentUpon>mini-cstructorEF.tt</DependentUpon>
     </Compile>
@@ -216,6 +219,7 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\ClassList.cshtml" />
     <Content Include="Views\Home\EnrollInClass.cshtml" />
+    <Content Include="Views\Home\StudentClasses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

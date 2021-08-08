@@ -30,17 +30,26 @@ namespace LearningWebsite.Models
         public virtual DbSet<Class> Classes { get; set; }
         public virtual DbSet<User> Users { get; set; }
     
-        public virtual int UpdateUserClass(Nullable<int> userId, Nullable<int> classId)
+        public virtual int UpdateUserClass(Nullable<int> classId, Nullable<int> userId)
+        {
+            var classIdParameter = classId.HasValue ?
+                new ObjectParameter("ClassId", classId) :
+                new ObjectParameter("ClassId", typeof(int));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateUserClass", classIdParameter, userIdParameter);
+        }
+    
+        public virtual ObjectResult<RetrieveClassesForStudent_Result> RetrieveClassesForStudent(Nullable<int> userId)
         {
             var userIdParameter = userId.HasValue ?
                 new ObjectParameter("UserId", userId) :
                 new ObjectParameter("UserId", typeof(int));
     
-            var classIdParameter = classId.HasValue ?
-                new ObjectParameter("ClassId", classId) :
-                new ObjectParameter("ClassId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateUserClass", userIdParameter, classIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RetrieveClassesForStudent_Result>("RetrieveClassesForStudent", userIdParameter);
         }
     }
 }

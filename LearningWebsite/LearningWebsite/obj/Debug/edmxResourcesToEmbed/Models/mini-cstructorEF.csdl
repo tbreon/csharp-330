@@ -32,8 +32,16 @@
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
     <FunctionImport Name="UpdateUserClass">
-      <Parameter Name="UserId" Mode="In" Type="Int32" />
       <Parameter Name="ClassId" Mode="In" Type="Int32" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RetrieveClassesForStudent" ReturnType="Collection(MiniCstructorModel.RetrieveClassesForStudent_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="RetrieveClassesForStudent_Result">
+    <Property Type="String" Name="ClassName" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="ClassPrice" Nullable="false" Precision="10" />
+    <Property Type="String" Name="ClassDescription" Nullable="false" MaxLength="50" />
+  </ComplexType>
 </Schema>
