@@ -133,7 +133,7 @@ namespace LearningWebsite.Controllers
             using (var databaseContext = new Models.Entities())
             {
                 var courses = databaseContext.Classes;
-                return View(courses);
+                return View(courses.ToList());
             }
         }
 
