@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MiniCstructorModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Classes">
+      <EntityTypeMapping TypeName="MiniCstructorModel.Class">
+        <MappingFragment StoreEntitySet="Class">
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="ClassDescription" ColumnName="ClassDescription" />
+          <ScalarProperty Name="ClassPrice" ColumnName="ClassPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MiniCstructorModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserIsAdmin" ColumnName="UserIsAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UserClass" TypeName="MiniCstructorModel.UserClass" StoreEntitySet="UserClass">
+      <EndProperty Name="Class">
+        <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="UpdateUserClass" FunctionName="MiniCstructorModel.Store.UpdateUserClass" />
+  </EntityContainerMapping>
+</Mapping>

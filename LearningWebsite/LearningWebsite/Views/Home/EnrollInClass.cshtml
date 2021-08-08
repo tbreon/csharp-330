@@ -1,0 +1,26 @@
+﻿@model List<LearningWebsite.Models.Class>
+
+
+@{
+    ViewBag.Title = "Enroll in class";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="border-bottom header">
+    <h1>@ViewData["Title"]</h1>
+</div>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.DropDownList(
+             "Foo",
+             new SelectList(
+                 Model.Select(x => new { Value = x.ClassId, Text = x.ClassName }),
+                 "Value",
+                 "Text"
+             )
+         )
+        <input type="submit" value="Enroll In Class" />
+    }
+</div>

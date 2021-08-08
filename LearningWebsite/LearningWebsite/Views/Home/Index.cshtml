@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="jumbotron">
+    <h1>The Learning Center</h1>
+    <p class="lead">The place for technology classes.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>@Html.ActionLink("Class List", "ClassList")</h3>
+        <p>
+            See all our class offerings
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h3>@Html.ActionLink("Your enrolled classes", "StudentClasses")</h3>
+        <p>See the class you are enrolled in</p>
+    </div>
+    <div class="col-md-4">
+        <h3>@Html.ActionLink("Enroll in a class", "EnrollInClass")</h3>
+        <p>Take a new class</p>
+    </div>
+</div>

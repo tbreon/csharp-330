@@ -1,0 +1,22 @@
+﻿@model LearningWebsite.Models.Login
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="border-bottom header">
+    <h1>@ViewData["Title"].</h1>
+    <p>@ViewBag.Message</p>
+</div>
+
+<div class="register">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <p>Email: @Html.TextBoxFor(t => t.Email) @Html.ValidationMessageFor(t => t.Email)</p>
+        <p>Password: @Html.TextBoxFor(t => t.Password) @Html.ValidationMessageFor(t => t.Password)</p>
+        <input type="submit" value="Login" />
+        <p>@Html.ActionLink("Register a new user", "Register")</p>
+    }
+</div>
