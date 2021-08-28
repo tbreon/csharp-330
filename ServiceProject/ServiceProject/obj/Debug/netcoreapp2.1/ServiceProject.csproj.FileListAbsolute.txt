@@ -1,0 +1,17 @@
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\bin\Debug\netcoreapp2.1\ServiceProject.deps.json
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\bin\Debug\netcoreapp2.1\ServiceProject.runtimeconfig.json
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\bin\Debug\netcoreapp2.1\ServiceProject.runtimeconfig.dev.json
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\bin\Debug\netcoreapp2.1\ServiceProject.dll
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\bin\Debug\netcoreapp2.1\ServiceProject.pdb
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\obj\Debug\netcoreapp2.1\ServiceProject.csprojAssemblyReference.cache
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\obj\Debug\netcoreapp2.1\ServiceProject.AssemblyInfoInputs.cache
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\obj\Debug\netcoreapp2.1\ServiceProject.AssemblyInfo.cs
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\obj\Debug\netcoreapp2.1\ServiceProject.csproj.CoreCompileInputs.cache
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\obj\Debug\netcoreapp2.1\ServiceProject.RazorAssemblyInfo.cache
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\obj\Debug\netcoreapp2.1\ServiceProject.RazorAssemblyInfo.cs
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\obj\Debug\netcoreapp2.1\ServiceProject.RazorTargetAssemblyInfo.cache
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\obj\Debug\netcoreapp2.1\ServiceProject.dll
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\obj\Debug\netcoreapp2.1\ServiceProject.pdb
+C:\Users\Travis\source\repos\csharp-330\ServiceProject\ServiceProject\obj\Debug\netcoreapp2.1\ServiceProject.genruntimeconfig.cache
